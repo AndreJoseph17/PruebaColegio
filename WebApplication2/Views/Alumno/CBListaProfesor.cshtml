@@ -1,0 +1,11 @@
+﻿@model List<WebApplication2.Models.Profesor>
+
+<div>
+    <select class="form-select">
+    <option value="">Selecciona un profesor</option>
+    @foreach (var profesor in Model)
+    {
+        <option value="@profesor.IdProfesor">@profesor.Nombre @profesor.Apellidos</option>
+    }
+</select>
+</div>

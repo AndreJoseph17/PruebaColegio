@@ -1,0 +1,51 @@
+﻿@model IEnumerable<WebApplication2.Models.AlumnoGrado>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+<p>
+        <a class="btn btn-primary active" role="button" aria-pressed="true"  asp-action="Create">Crear Matrícula</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IdAlumno)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GradoId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Seccion)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdAlumno)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GradoId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Seccion)
+            </td>
+            <td>
+                        <a class="btn btn-success active" role="button" aria-pressed="true" asp-action="Edit" asp-route-id="@item.IdAlumnoGrado">Editar</a> 
+                        <a class="btn btn-info active" role="button" aria-pressed="true" asp-action="Details" asp-route-id="@item.IdAlumnoGrado">Detalle</a> 
+                        <a class="btn btn-warning active" role="button" aria-pressed="true" asp-action="Delete" asp-route-id="@item.IdAlumnoGrado">Eliminar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</body>
+</html>
